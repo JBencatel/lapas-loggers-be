@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = Country::paginate(15);
+        $countries = Country::all();
 
         return CountryResource::collection($countries);
     }
@@ -28,6 +28,8 @@ class CountryController extends Controller
      */
     public function show($id)
     {
-        //
+        $country = Country::findOrFail($id);
+
+        return new CountryResource($country);
     }
 }
