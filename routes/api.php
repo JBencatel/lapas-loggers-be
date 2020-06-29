@@ -22,4 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('countries', 'CountryController@index');
 
 // Show single country
-Route::get('country/{id}', 'CountryController@show');
+Route::get('countries/{id}', 'CountryController@show');
+
+// List countries
+Route::get('shore-replicates', 'ShoreReplicateController@index');
+
+// Show single country
+Route::get('shore-replicates/{id}', 'ShoreReplicateController@show');
