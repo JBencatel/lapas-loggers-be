@@ -14,7 +14,7 @@ class CreateShoreLevelsTable extends Migration
     public function up()
     {
         Schema::create('shore_levels', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('code', 1);
             $table->string('name');
             $table->timestamps();

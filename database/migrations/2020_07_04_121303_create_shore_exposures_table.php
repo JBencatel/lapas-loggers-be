@@ -14,7 +14,7 @@ class CreateShoreExposuresTable extends Migration
     public function up()
     {
         Schema::create('shore_exposures', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('code', 1);
             $table->string('name');
             $table->timestamps();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFieldWorkUnitsTable extends Migration
+class CreateShoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateFieldWorkUnitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('field_work_units', function (Blueprint $table) {
+        Schema::create('shores', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('code', 2);
+            $table->foreignId('country_id')->constrained();
+            $table->foreignId('fwunit_id')->constrained('field_work_units');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateFieldWorkUnitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('field_work_units');
+        Schema::dropIfExists('shores');
     }
 }
