@@ -19,17 +19,4 @@ class ShoreReplicateController extends Controller
 
         return ShoreReplicateResource::collection($shoreReplicates);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $shoreReplicate = ShoreReplicate::findOrFail($id);
-
-        return new ShoreReplicateResource($shoreReplicate);
-    }
 }

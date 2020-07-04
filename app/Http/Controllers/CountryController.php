@@ -19,17 +19,4 @@ class CountryController extends Controller
 
         return CountryResource::collection($countries);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $country = Country::findOrFail($id);
-
-        return new CountryResource($country);
-    }
 }

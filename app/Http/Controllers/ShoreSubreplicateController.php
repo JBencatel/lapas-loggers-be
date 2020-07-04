@@ -19,17 +19,4 @@ class ShoreSubreplicateController extends Controller
 
         return ShoreSubreplicateResource::collection($shoreSubreplicates);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ShoreSubreplicate  $shoreSubreplicate
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $shoreSubreplicate = ShoreSubreplicate::findOrFail($id);
-
-        return new ShoreSubreplicateResource($shoreSubreplicate);
-    }
 }
