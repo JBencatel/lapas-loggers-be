@@ -61,3 +61,9 @@ Route::put('servicing', 'ServicingController@store');
 Route::delete('servicing/{id}', 'ServicingController@destroy');
 
 Route::get('microhabitats', 'MicrohabitatController@index');
+
+Route::get('positions', 'PositionController@index');
+Route::get('position/{id}', 'PositionController@show');
+Route::post('position', 'PositionController@store');
+Route::put('position', 'PositionController@store');
+Route::delete('position/{id}', 'PositionController@destroy');
