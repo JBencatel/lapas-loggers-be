@@ -20,6 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('countries', 'CountryController@index');
 
+Route::get('shores', 'ShoreController@index');
+Route::get('shore/{id}', 'ShoreController@show');
+Route::post('shore', 'ShoreController@store');
+Route::put('shore', 'ShoreController@store');
+Route::delete('shore/{id}', 'ShoreController@destroy');
+
 Route::get('shore-exposures', 'ShoreExposureController@index');
 
 Route::get('shore-levels', 'ShoreLevelController@index');
@@ -42,8 +48,8 @@ Route::post('logger-type', 'LoggerTypeController@store');
 Route::put('logger-type', 'LoggerTypeController@store');
 Route::delete('logger-type/{id}', 'LoggerTypeController@destroy');
 
-Route::get('shores', 'ShoreController@index');
-Route::get('shore/{id}', 'ShoreController@show');
-Route::post('shore', 'ShoreController@store');
-Route::put('shore', 'ShoreController@store');
-Route::delete('shore/{id}', 'ShoreController@destroy');
+Route::get('people', 'PersonController@index');
+Route::get('person/{id}', 'PersonController@show');
+Route::post('person', 'PersonController@store');
+Route::put('person', 'PersonController@store');
+Route::delete('person/{id}', 'PersonController@destroy');
