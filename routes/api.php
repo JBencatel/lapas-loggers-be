@@ -53,3 +53,9 @@ Route::get('person/{id}', 'PersonController@show');
 Route::post('person', 'PersonController@store');
 Route::put('person', 'PersonController@store');
 Route::delete('person/{id}', 'PersonController@destroy');
+
+Route::get('servicings', 'ServicingController@index');
+Route::get('servicing/{id}', 'ServicingController@show');
+Route::post('servicing', 'ServicingController@store');
+Route::put('servicing', 'ServicingController@store');
+Route::delete('servicing/{id}', 'ServicingController@destroy');
