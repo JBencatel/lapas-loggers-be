@@ -59,3 +59,5 @@ Route::get('servicing/{id}', 'ServicingController@show');
 Route::post('servicing', 'ServicingController@store');
 Route::put('servicing', 'ServicingController@store');
 Route::delete('servicing/{id}', 'ServicingController@destroy');
+
+Route::get('microhabitats', 'MicrohabitatController@index');
