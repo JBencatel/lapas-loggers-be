@@ -22,9 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('countries', 'CountryController@index');
 
 
+
+// List all shore replicates
+Route::get('shore-levels', 'ShoreLevelController@index');
+
 // List all shore replicates
 Route::get('shore-replicates', 'ShoreReplicateController@index');
-
 
 // List all shore subreplicates
 Route::get('shore-subreplicates', 'ShoreSubreplicateController@index');
