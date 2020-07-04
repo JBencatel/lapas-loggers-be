@@ -18,14 +18,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// List countries
+// List all countries
 Route::get('countries', 'CountryController@index');
 
 // Show single country
 Route::get('countries/{id}', 'CountryController@show');
 
-// List countries
+// List all shore replicates
 Route::get('shore-replicates', 'ShoreReplicateController@index');
 
-// Show single country
+// Show single shore replicate
 Route::get('shore-replicates/{id}', 'ShoreReplicateController@show');
+
+// List all shore subreplicates
+Route::get('shore-subreplicates', 'ShoreSubreplicateController@index');
+
+// Show single shore subreplicates
+Route::get('shore-subreplicates/{id}', 'ShoreSubreplicateController@show');

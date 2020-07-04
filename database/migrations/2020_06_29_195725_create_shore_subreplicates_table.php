@@ -14,7 +14,8 @@ class CreateShoreSubreplicatesTable extends Migration
     public function up()
     {
         Schema::create('shore_subreplicates', function (Blueprint $table) {
-            $table->string('id', 1) ->primary();
+            $table->increments('id');
+            $table->string('label', 1);
             $table->timestamps();
         });
     }

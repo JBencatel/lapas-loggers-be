@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ShoreSubreplicate as ShoreSubreplicateResource;
 use App\ShoreSubreplicate;
 use Illuminate\Http\Request;
 
@@ -14,28 +15,9 @@ class ShoreSubreplicateController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $shoreSubreplicates = ShoreSubreplicate::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return ShoreSubreplicateResource::collection($shoreSubreplicates);
     }
 
     /**
@@ -44,42 +26,10 @@ class ShoreSubreplicateController extends Controller
      * @param  \App\ShoreSubreplicate  $shoreSubreplicate
      * @return \Illuminate\Http\Response
      */
-    public function show(ShoreSubreplicate $shoreSubreplicate)
+    public function show($id)
     {
-        //
-    }
+        $shoreSubreplicate = ShoreSubreplicate::findOrFail($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\ShoreSubreplicate  $shoreSubreplicate
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ShoreSubreplicate $shoreSubreplicate)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ShoreSubreplicate  $shoreSubreplicate
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ShoreSubreplicate $shoreSubreplicate)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\ShoreSubreplicate  $shoreSubreplicate
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ShoreSubreplicate $shoreSubreplicate)
-    {
-        //
+        return new ShoreSubreplicateResource($shoreSubreplicate);
     }
 }

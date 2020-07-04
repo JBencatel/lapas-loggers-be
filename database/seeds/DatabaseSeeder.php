@@ -12,5 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(ShoreReplicatesSeeder::class);
+        $this->call(ShoreSubreplicatesSeeder::class);
     }
 }
