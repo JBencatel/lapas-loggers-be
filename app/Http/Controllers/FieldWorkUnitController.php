@@ -41,7 +41,7 @@ class FieldWorkUnitController extends Controller
         $fieldWorkUnit = $request->isMethod('put') ? FieldWorkUnit::findOrFail($request->id) : new FieldWorkUnit;
 
         $fieldWorkUnit->id = $request->input('id');
-        $fieldWorkUnit->label = $request->input('label');
+        $fieldWorkUnit->name = $request->input('name');
 
         if ($fieldWorkUnit->save()) {
             return new FieldWorkUnitResource($fieldWorkUnit);

@@ -6,8 +6,8 @@ use App\ShoreSubreplicate;
 use Faker\Generator as Faker;
 
 $factory->define(ShoreSubreplicate::class, function (Faker $faker) {
-    static $label = "A";
+    static $name = "A";
     return [
-        'label' => $label++
+        'name' => $name++
     ];
 });

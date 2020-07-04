@@ -15,7 +15,7 @@ class CreateFieldWorkUnitsTable extends Migration
     {
         Schema::create('field_work_units', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('label');
+            $table->string('name');
             $table->timestamps();
         });
     }

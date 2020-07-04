@@ -16,7 +16,7 @@ class ShoreSubreplicate extends JsonResource
     {
         return [
             'id' => $this->id,
-            'label' => $this->label
+            'name' => $this->name
         ];
     }
 }
