@@ -21,17 +21,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // List all countries
 Route::get('countries', 'CountryController@index');
 
-// Show single country
-Route::get('countries/{id}', 'CountryController@show');
-
 // List all shore replicates
 Route::get('shore-replicates', 'ShoreReplicateController@index');
-
-// Show single shore replicate
-Route::get('shore-replicates/{id}', 'ShoreReplicateController@show');
 
 // List all shore subreplicates
 Route::get('shore-subreplicates', 'ShoreSubreplicateController@index');
 
-// Show single shore subreplicates
-Route::get('shore-subreplicates/{id}', 'ShoreSubreplicateController@show');
+// List all field work units
+Route::get('field-work-units', 'FieldWorkUnitController@index');
+
+// Show single field work unit
+Route::get('field-work-unit/{id}', 'FieldWorkUnitController@show');
+
+// Show single field work unit
+Route::post('field-work-unit', 'FieldWorkUnitController@store');
+
+// Show single field work unit
+Route::put('field-work-unit', 'FieldWorkUnitController@store');
+
+// Delete single shore subreplicates
+Route::delete('field-work-unit/{id}', 'FieldWorkUnitController@destroy');
