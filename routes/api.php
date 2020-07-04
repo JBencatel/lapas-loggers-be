@@ -21,9 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // List all countries
 Route::get('countries', 'CountryController@index');
 
+// List all shore exposures
+Route::get('shore-exposures', 'ShoreExposureController@index');
 
-
-// List all shore replicates
+// List all shore levels
 Route::get('shore-levels', 'ShoreLevelController@index');
 
 // List all shore replicates
