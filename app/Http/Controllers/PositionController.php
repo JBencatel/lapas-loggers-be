@@ -50,8 +50,8 @@ class PositionController extends Controller
         $position->shore_replicate_id = $request->input('shore_replicate_id');
         $position->shore_subreplicate_id = $request->input('shore_subreplicate_id');
         $position->microhabitat_id = $request->input('microhabitat_id');
-        $position->start_date = $request->input('start_date');
-        $position->end_date = $request->input('end_date');
+        $position->deployment_date = $request->input('deployment_date');
+        $position->termination_date = $request->input('termination_date');
         $position->inactive = $request->input('inactive');
         $position->old_number = $request->input('old_number');
 

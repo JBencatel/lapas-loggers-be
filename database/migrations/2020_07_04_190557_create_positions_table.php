@@ -24,8 +24,8 @@ class CreatePositionsTable extends Migration
             $table->foreignId('shore_replicate_id')->constrained();
             $table->foreignId('shore_subreplicate_id')->constrained();
             $table->foreignId('microhabitat_id')->constrained();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('deployment_date');
+            $table->date('termination_date');
             $table->boolean('inactive');
             $table->integer('old_number');
             $table->timestamps();
