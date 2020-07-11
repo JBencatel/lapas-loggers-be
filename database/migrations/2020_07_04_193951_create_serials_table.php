@@ -16,11 +16,11 @@ class CreateSerialsTable extends Migration
         Schema::create('serials', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('original_name');
-            $table->foreignId('position_id')->constrained();
+            $table->string('original_name')->nullable();
+            $table->foreignId('position_id')->nullable()->constrained();
             $table->foreignId('logger_type_id')->constrained();
-            $table->date('deployment_date');
-            $table->date('termination_date');
+            $table->date('deployment_date')->nullable();
+            $table->date('termination_date')->nullable();
             $table->boolean('inactive');
             $table->timestamps();
         });

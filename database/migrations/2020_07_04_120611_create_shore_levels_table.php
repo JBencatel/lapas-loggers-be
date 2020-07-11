@@ -17,7 +17,6 @@ class CreateShoreLevelsTable extends Migration
             $table->id();
             $table->string('code', 1);
             $table->string('name');
-            $table->timestamps();
         });
     }
 

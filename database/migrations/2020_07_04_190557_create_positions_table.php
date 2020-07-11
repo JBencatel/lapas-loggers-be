@@ -23,11 +23,11 @@ class CreatePositionsTable extends Migration
             $table->foreignId('shore_exposure_id')->constrained();
             $table->foreignId('shore_replicate_id')->constrained();
             $table->foreignId('shore_subreplicate_id')->constrained();
-            $table->foreignId('microhabitat_id')->constrained();
-            $table->date('deployment_date');
-            $table->date('termination_date');
+            $table->foreignId('microhabitat_id')->nullable()->constrained();
+            $table->date('deployment_date')->nullable();
+            $table->date('termination_date')->nullable();
             $table->boolean('inactive');
-            $table->integer('old_number');
+            $table->integer('old_number')->nullable();
             $table->timestamps();
         });
     }

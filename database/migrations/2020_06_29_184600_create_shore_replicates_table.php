@@ -15,7 +15,6 @@ class CreateShoreReplicatesTable extends Migration
     {
         Schema::create('shore_replicates', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
         });
     }
 
