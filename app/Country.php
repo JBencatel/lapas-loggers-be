@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     public $timestamps = false;
+
+    public function shores()
+    {
+        return $this->hasMany(Shore::class);
+    }
 }
