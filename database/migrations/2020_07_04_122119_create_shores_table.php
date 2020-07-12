@@ -17,7 +17,8 @@ class CreateShoresTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('code', 2);
-            $table->foreignId('country_id')->constrained();
+            $table->integer('country_id');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->foreignId('fwunit_id')->nullable()->constrained('field_work_units');
             $table->double('latitude', 9, 6);
             $table->double('longitude', 9, 6);
