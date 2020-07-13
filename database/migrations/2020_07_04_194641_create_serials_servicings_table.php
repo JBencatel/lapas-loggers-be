@@ -16,6 +16,7 @@ class CreateSerialsServicingsTable extends Migration
         Schema::create('serials_servicings', function (Blueprint $table) {
             $table->foreignId('serial_id')->constrained();
             $table->foreignId('servicing_id')->constrained();
+            $table->integer('off_sync_time');
         });
     }
 
