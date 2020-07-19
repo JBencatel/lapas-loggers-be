@@ -21,44 +21,44 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('countries', 'CountryController@index');
 
 Route::get('shores', 'ShoreController@index');
-Route::get('shore/{id}', 'ShoreController@show');
-Route::post('shore', 'ShoreController@store');
-Route::put('shore', 'ShoreController@store');
-Route::delete('shore/{id}', 'ShoreController@destroy');
+Route::get('shores/{id}', 'ShoreController@show');
+Route::post('shores', 'ShoreController@store');
+Route::put('shores', 'ShoreController@store');
+Route::delete('shores/{id}', 'ShoreController@destroy');
 
 Route::get('shore-exposures', 'ShoreExposureController@index');
 
 Route::get('shore-levels', 'ShoreLevelController@index');
 
 Route::get('field-work-units', 'FieldWorkUnitController@index');
-Route::get('field-work-unit/{id}', 'FieldWorkUnitController@show');
-Route::post('field-work-unit', 'FieldWorkUnitController@store');
-Route::put('field-work-unit', 'FieldWorkUnitController@store');
-Route::delete('field-work-unit/{id}', 'FieldWorkUnitController@destroy');
+Route::get('field-work-units/{id}', 'FieldWorkUnitController@show');
+Route::post('field-work-units', 'FieldWorkUnitController@store');
+Route::put('field-work-units', 'FieldWorkUnitController@store');
+Route::delete('field-work-units/{id}', 'FieldWorkUnitController@destroy');
 
 
 Route::get('logger-types', 'LoggerTypeController@index');
-Route::get('logger-type/{id}', 'LoggerTypeController@show');
-Route::post('logger-type', 'LoggerTypeController@store');
-Route::put('logger-type', 'LoggerTypeController@store');
-Route::delete('logger-type/{id}', 'LoggerTypeController@destroy');
+Route::get('logger-types/{id}', 'LoggerTypeController@show');
+Route::post('logger-types', 'LoggerTypeController@store');
+Route::put('logger-types', 'LoggerTypeController@store');
+Route::delete('logger-types/{id}', 'LoggerTypeController@destroy');
 
 Route::get('people', 'PersonController@index');
-Route::get('person/{id}', 'PersonController@show');
-Route::post('person', 'PersonController@store');
-Route::put('person', 'PersonController@store');
-Route::delete('person/{id}', 'PersonController@destroy');
+Route::get('people/{id}', 'PersonController@show');
+Route::post('people', 'PersonController@store');
+Route::put('people', 'PersonController@store');
+Route::delete('people/{id}', 'PersonController@destroy');
 
 Route::get('servicings', 'ServicingController@index');
-Route::get('servicing/{id}', 'ServicingController@show');
-Route::post('servicing', 'ServicingController@store');
-Route::put('servicing', 'ServicingController@store');
-Route::delete('servicing/{id}', 'ServicingController@destroy');
+Route::get('servicings/{id}', 'ServicingController@show');
+Route::post('servicings', 'ServicingController@store');
+Route::put('servicings', 'ServicingController@store');
+Route::delete('servicings/{id}', 'ServicingController@destroy');
 
 Route::get('microhabitats', 'MicrohabitatController@index');
 
 Route::get('positions', 'PositionController@index');
-Route::get('position/{id}', 'PositionController@show');
-Route::post('position', 'PositionController@store');
-Route::put('position', 'PositionController@store');
-Route::delete('position/{id}', 'PositionController@destroy');
+Route::get('positions/{id}', 'PositionController@show');
+Route::post('positions', 'PositionController@store');
+Route::put('positions', 'PositionController@store');
+Route::delete('positions/{id}', 'PositionController@destroy');
