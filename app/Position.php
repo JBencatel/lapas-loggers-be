@@ -24,18 +24,7 @@ class Position extends Model
     public function shoreExposure()
     {
         return $this->belongsTo(ShoreExposure::class);
-    }
-
-    public function shoreReplicate()
-    {
-        return $this->belongsTo(ShoreReplicate::class);
-    }
-
-    public function shoreSubreplicate()
-    {
-        return $this->belongsTo(ShoreSubreplicate::class);
-    }
-    
+    }    
 
     public function serials()
     {

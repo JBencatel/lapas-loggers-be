@@ -30,11 +30,6 @@ Route::get('shore-exposures', 'ShoreExposureController@index');
 
 Route::get('shore-levels', 'ShoreLevelController@index');
 
-Route::get('shore-replicates', 'ShoreReplicateController@index');
-
-Route::get('shore-subreplicates', 'ShoreSubreplicateController@index');
-
-
 Route::get('field-work-units', 'FieldWorkUnitController@index');
 Route::get('field-work-unit/{id}', 'FieldWorkUnitController@show');
 Route::post('field-work-unit', 'FieldWorkUnitController@store');

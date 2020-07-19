@@ -47,8 +47,8 @@ class PositionController extends Controller
         $position->shore_id = $request->input('shore_id');
         $position->shore_level_id = $request->input('shore_level_id');
         $position->shore_exposure_id = $request->input('shore_exposure_id');
-        $position->shore_replicate_id = $request->input('shore_replicate_id');
-        $position->shore_subreplicate_id = $request->input('shore_subreplicate_id');
+        $position->shore_replicate = $request->input('shore_replicate');
+        $position->shore_subreplicate = $request->input('shore_subreplicate');
         $position->microhabitat_id = $request->input('microhabitat_id');
         $position->deployment_date = $request->input('deployment_date');
         $position->termination_date = $request->input('termination_date');
