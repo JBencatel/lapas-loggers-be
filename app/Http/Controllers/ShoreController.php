@@ -49,7 +49,7 @@ class ShoreController extends Controller
         $shore->longitude = $request->input('longitude');
 
         if ($shore->save()) {
-            return new Shore($shore);
+            return $shore;
         }
     }
 
