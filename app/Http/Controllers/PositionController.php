@@ -15,7 +15,7 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $positions = Position::paginate(10);
+        $positions = Position::all();
 
         return PositionResource::collection($positions);
     }
