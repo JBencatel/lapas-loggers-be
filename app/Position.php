@@ -11,11 +11,6 @@ class Position extends Model
         return $this->belongsTo(Shore::class);
     }
 
-    public function microhabitat()
-    {
-        return $this->belongsTo(Microhabitat::class);
-    }
-
     public function shoreLevel()
     {
         return $this->belongsTo(ShoreLevel::class);
