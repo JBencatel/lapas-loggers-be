@@ -16,9 +16,13 @@ class Serial extends Model
         return $this->belongsTo(Position::class);
     }
 
+    public function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
+
     public function servicings()
     {
-        return $this->belongsToMany(Servicing::class, 'serials_servicings')
-            ->withPivot('off_sync_time');
+        //
     }
 }

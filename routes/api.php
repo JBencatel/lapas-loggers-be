@@ -68,3 +68,9 @@ Route::get('loggers/{id}', 'SerialController@show');
 Route::post('loggers', 'SerialController@store');
 Route::put('loggers', 'SerialController@store');
 Route::delete('loggers/{id}', 'SerialController@destroy');
+
+Route::get('logs', 'LogController@index');
+Route::get('logs/{id}', 'LogController@show');
+Route::post('logs', 'LogController@store');
+Route::put('logs', 'LogController@store');
+Route::delete('logs/{id}', 'LogController@destroy');

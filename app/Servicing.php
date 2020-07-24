@@ -16,9 +16,13 @@ class Servicing extends Model
         return $this->belongsToMany(Person::class, 'people_servicings');
     }
 
-    public function serials()
+    public function logs()
     {
-        return $this->belongsToMany(Serial::class, 'serials_servicings')
-            ->withPivot('off_sync_time');
+        return $this->hasMany(Log::class);
+    }
+
+    public function loggers()
+    {
+       //
     }
 }

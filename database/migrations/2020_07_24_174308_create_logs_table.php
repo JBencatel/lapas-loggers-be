@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSerialsServicingsTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateSerialsServicingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('serials_servicings', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('serial_id')->constrained();
             $table->foreignId('servicing_id')->constrained();
-            $table->integer('off_sync_time');
+            $table->string('log_file')->nullable();
+            $table->integer('off_sync')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +30,6 @@ class CreateSerialsServicingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serials_servicings');
+        Schema::dropIfExists('logs');
     }
 }
