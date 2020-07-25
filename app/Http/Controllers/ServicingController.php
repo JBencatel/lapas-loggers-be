@@ -17,6 +17,10 @@ class ServicingController extends Controller
     {
         $servicings = Servicing::all();
 
+        foreach($servicings as $servicing) {
+            $servicing->setAppends(['participants'])->toArray();
+        }
+
         return ServicingResource::collection($servicings);
     }
 
@@ -39,6 +43,12 @@ class ServicingController extends Controller
     public function store(Request $request)
     {
         $servicing = $request->isMethod('put') ? Servicing::findOrFail($request->id) : new Servicing;
+
+        $participants = $request->input('participants');
+        if ($participants !== null)
+        {
+            $servicing->participants()->sync($participants);
+        }
 
         $servicing->id = $request->input('id');
         $servicing->date = $request->input('date');
