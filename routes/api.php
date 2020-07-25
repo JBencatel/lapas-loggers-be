@@ -72,5 +72,5 @@ Route::delete('loggers/{id}', 'SerialController@destroy');
 Route::get('logs', 'LogController@index');
 Route::get('logs/{id}', 'LogController@show');
 Route::post('logs', 'LogController@store');
-Route::put('logs', 'LogController@store');
 Route::delete('logs/{id}', 'LogController@destroy');
+Route::get('logs/{id}/file', 'LogController@downloadFile');

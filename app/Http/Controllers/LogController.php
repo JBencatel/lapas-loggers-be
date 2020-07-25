@@ -39,14 +39,14 @@ class LogController extends Controller
      */
     public function store(Request $request)
     {
-        $log = $request->isMethod('put') ? Log::findOrFail($request->id) : new Log;
+        $log = $request->id !== null ? Log::findOrFail($request->id) : new Log;
 
         if($request->hasFile('log_file')) {
-            $filenameWithExt = $request->file('log_file')->getClientOriginalName();
+            $filenameWithExt = $request->file('log_file')->getClientOriginalName();       
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('log_file')->getClientOriginalExtension();
-            $filenameToStore = $$filename . "_" . time() . "_" . $extension;
-            $path = $request->file('log_file')->storeAs('public/log_files', $filenameToStore);
+            $filenameToStore = $filename . "_" . time() . "." . $extension;
+            $request->file('log_file')->storeAs('public/log_files', $filenameToStore);
         }
 
         $log->id = $request->input('id');
@@ -113,5 +113,10 @@ class LogController extends Controller
         if ($log->delete()) {
             return new LogResource($log);
         }
+    }
+
+    public function downloadFile($id){
+        $log = Log::findOrFail($id);
+        return Storage::download('public/log_files/' . $log->log_file, $log->log_file);
     }
 }
