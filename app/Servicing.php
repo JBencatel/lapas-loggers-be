@@ -20,9 +20,4 @@ class Servicing extends Model
     {
         return $this->hasMany(Log::class);
     }
-
-    public function loggers()
-    {
-       //
-    }
 }

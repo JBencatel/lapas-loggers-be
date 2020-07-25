@@ -18,4 +18,9 @@ class Shore extends Model
     {
         return $this->belongsTo(FieldWorkUnit::class);
     }
+
+    public function positions()
+    {
+        return $this->hasMany(Position::class);
+    }
 }
