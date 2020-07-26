@@ -16,7 +16,7 @@ class ShoreLevelsSeeder extends Seeder
             ['id' => 1, 'code' => 'L', 'name' => 'Low'],
             ['id' => 2, 'code' => 'M', 'name' => 'Medium'],
             ['id' => 3, 'code' => 'S', 'name' => 'Supra'],
-            ['id' => 4, 'code' => 'H', 'name' => 'High']
+            ['id' => 4, 'code' => 'T', 'name' => 'Top']
         ];
 
         foreach ($items as $item) {
