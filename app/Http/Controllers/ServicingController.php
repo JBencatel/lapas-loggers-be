@@ -44,18 +44,18 @@ class ServicingController extends Controller
     {
         $servicing = $request->isMethod('put') ? Servicing::findOrFail($request->id) : new Servicing;
 
-        $participants = $request->input('participants');
-        if ($participants !== null)
-        {
-            $servicing->participants()->sync($participants);
-        }
-
         $servicing->id = $request->input('id');
         $servicing->date = $request->input('date');
         $servicing->shore_id = $request->input('shore_id');
         $servicing->notes = $request->input('notes');
 
         if ($servicing->save()) {
+            $participants = $request->input('participants');
+            if ($participants !== null)
+            {
+                $servicing->participants()->sync($participants);
+            }
+            
             return new ServicingResource($servicing);
         }
     }
