@@ -17,7 +17,7 @@ class CreateServicingsTable extends Migration
             $table->id();
             $table->date('date');
             $table->foreignId('shore_id')->constrained();
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
